@@ -52,7 +52,8 @@ public class TaskController {
 
 	@DeleteMapping(path = "/tasks")
 	public Object updateTask(@Valid @RequestBody TaskDeleteWrapper task) throws SystemException {
-		return taskService.delete(task);
+		taskService.delete(task);
+		return new ResponseEntity<>(new CustomSuccessResponse(HttpStatus.OK, new Date(), "/tasks", "Delete Successfully!"), HttpStatus.OK);
 	}
 
 	@PostMapping(path = "/tasks/change-status")

@@ -13,6 +13,8 @@ public class TaskChangeStatusWrapper {
 	@NotBlank
 	String id;
 	
+	@NotNull
+	@NotBlank
 	@Size(max=1)
 	String status;
 	
